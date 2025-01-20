@@ -6,5 +6,6 @@ urlpatterns = [
     path('movie_detail/<int:id>/', views.movie_detail, name='movie_detail'),
     path('greeting/', views.greeting, name='greeting'),
     path('emoji/', views.many_emoji, name='emoji'),
-    path('image/', views.gif_image, name='image')
+    path('image/', views.gif_image, name='image'),
+    path('search/', views.SearchView.as_view(), name='search'),
 ]

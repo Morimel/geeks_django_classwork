@@ -2,26 +2,26 @@ from django.db import models
 
 class Movies(models.Model):
     GENRE_CHOICES = (
-        ('Ужасы', 'Ужасы'),
-        ('Комедия', 'Комедия'),
-        ('Романтика', 'Романтика'),
+        ('Horror', 'Horror'),
+        ('Comedy', 'Comedy'),
+        ('Romance', 'Romance'),
     )
-    image = models.ImageField(upload_to='movies/', verbose_name='загрузите фото')
-    title = models.CharField(max_length=100, verbose_name='укажите название фильма')
-    description = models.TextField(verbose_name='напишите описание', blank=True)
-    price = models.PositiveIntegerField(verbose_name='укажите цену', default=400)
+    image = models.ImageField(upload_to='movies/', verbose_name='load photo')
+    title = models.CharField(max_length=100, verbose_name='name of the movie')
+    description = models.TextField(verbose_name='description', blank=True)
+    price = models.PositiveIntegerField(verbose_name='price', default=400)
     created_at = models.DateTimeField(auto_now_add=True)
-    genre_choices = models.CharField(max_length=100, choices=GENRE_CHOICES, verbose_name='выберите жанр')
-    time_watch = models.PositiveIntegerField(default=120, verbose_name='укажите продолжительность фильма')
-    director = models.CharField(max_length=100, verbose_name='укажите режиссера')
-    trailer = models.URLField(verbose_name='вставьте ссылку с YouTube')
+    genre_choices = models.CharField(max_length=100, choices=GENRE_CHOICES, verbose_name='genre')
+    time_watch = models.PositiveIntegerField(default=120, verbose_name='duartion')
+    director = models.CharField(max_length=100, verbose_name='director')
+    trailer = models.URLField(verbose_name='YouTube trailer')
     
     class Meta:
-        verbose_name = 'Фильм'
-        verbose_name_plural = 'Фильмы'
+        verbose_name = 'Movies'
+        verbose_name_plural = 'Movies'
         
     def __str__(self):
-        return f'{self.title}: {self.price} сом'
+        return f'{self.title}: {self.price} som'
     
     
 class Reviews(models.Model):

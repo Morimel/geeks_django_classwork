@@ -1,0 +1,14 @@
+{% load static %}
+{% include 'components/header.html' %}
+<link rel="stylesheet" href="{% static 'css/hashtags.css' %}">
+<link rel="stylesheet" href="{% static 'css/show.css' %}">
+
+<h2 style="text-align: center; color: white;">Choose genre:</h2>
+
+<div class="buttons">
+    <a href="{% url 'movies_by_genre' 'Horror' %}" class="genre-button">Horror</a>
+    <a href="{% url 'movies_by_genre' 'Comedy' %}" class="genre-button">Comedy</a>
+    <a href="{% url 'movies_by_genre' 'Romance' %}" class="genre-button">Romance</a>
+</div>
+
+{% include 'components/footer.html' %}

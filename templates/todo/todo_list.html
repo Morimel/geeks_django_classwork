@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Todo list</title>
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
 </head>
 <body>
     <ul>
@@ -10,9 +12,9 @@
             <li>
                 <h1>{{ i.task }}</h1>
                 <p>{{ i.checked }}</p>
-                <button><a href="/todo_list/{{ i.id }}/"></a>Подробнее</button>
-                <button><a href="/todo_list/{{ i.id }}/delete/"></a>Удалить</button>
-                <button><a href="/todo_list/{{ i.id }}/update/"></a>Изменить</button>
+                <a href="/todo_list/{{ i.id }}/" class="btn">More</a>
+                <a href="/todo_list/{{ i.id }}/delete/" class="btn">Delete</a>
+                <a href="/todo_list/{{ i.id }}/update/" class="btn">Change</a>
             </li>
         {% endfor %}
     </ul>

@@ -38,6 +38,14 @@ def movie_detail(request, id):
 
 
 
+from tv_show.models import Movies
+
+def movies_by_genre(request, genre_name):
+    movies = Movies.objects.filter(genre_choices=genre_name)
+    return render(request, 'hashtags/movies_by_genre.html', {
+        'tag_name': genre_name,
+        'movies': movies
+    })
 
 
 

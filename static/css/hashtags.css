@@ -1,24 +1,29 @@
-/* Стили для карточки */
-.card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    background-color: #f9f9f9;
-    margin: 20px auto; /* Центрирование карточки */
+.genre-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.genre-button:hover {
+    background-color: #ffaa00;
 }
 
-/* Стили для заголовка */
-.card h1 {
-    font-size: 24px;
-    margin: 10px 0;
+.genre-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
-
-/* Стили для текста */
-.card p {
-    font-size: 16px;
-    color: #555;
+.genre-button:hover {
+    background-color: #ffaa00;
 }
 
 /* Контейнер для кнопок */

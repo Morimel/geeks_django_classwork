@@ -11,7 +11,7 @@
             <img src="{{ movie_id.image.url }}" style="width: 400px; height: 600px; object-fit: cover; display: block; margin: 0 auto;" alt="Фильм">
             <div class="card-body">
                 <h5 class="card-title">{{ movie_id.title }}</h5>
-                <p class="card-text">{{ movie_id.decription }}</p>
+                <p class="card-text" style="white-space: normal !important; overflow: visible !important;">{{ movie_id.description }}</p>
                 <p><strong>Ticket price:</strong> {{ movie_id.price }} som</p>
                 <p><strong>Date of release:</strong> {{ movie_id.created_at }}</p>
                 <p><strong>Genre:</strong> {{movie_id.genre_choices}}</p>
@@ -24,13 +24,12 @@
     </div>
 
     {% for i in movie_id.movies.all %}
-    <div class="comment-section">
-        <h5>Comments</h5>
-        <div class="comment">
-            <p> {{ i.created_at }}: {{i.comment}} <strong>Rating:</strong> {{i.starts}}</p>
+        <div class="comment-section">
+            <h5>Comments</h5>
+            <div class="comment">
+                <p> {{ i.created_at }}: {{i.comment}} <strong>Rating:</strong> {{i.stars}}</p>
+            </div>
         </div>
-    </div>
-</div>
     {% endfor %}
 
 {% include 'components/footer.html' %}
